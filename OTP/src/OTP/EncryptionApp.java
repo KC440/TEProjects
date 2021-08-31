@@ -128,6 +128,7 @@ public class EncryptionApp {
     private void encryptMessage(String plaintext, Key chosenKey, String outputFileName, String keyFileName) {
         Ciphertext ciphertext = new Ciphertext(plaintext, chosenKey);
         writer.exportCiphertext(outputFileName, ciphertext, chosenKey.getKeyNumber(), keyFileName);
+        //Overwrite disabled for testing
         //writer.overwriteUsedKey(chosenKey.getFileName(), chosenKey.getKeyNumber());
         System.out.println("\r\nMessage encrypted and placed in OUTPUT/MESSAGE/CIPHERTEXT folder.");
     }
@@ -136,6 +137,7 @@ public class EncryptionApp {
         Key key = reader.importKey(keyFileName, keyNumber);
         if(key != null) {
             Plaintext plaintext = new Plaintext(message, key);
+            //Overwrite disabled for testing
             //writer.overwriteUsedKey(keyFileName, keyNumber);
             System.out.println("\r\n" + plaintext.printable());
         }
