@@ -112,7 +112,7 @@ export default {
   flex-wrap: wrap;
   border: 3px solid antiquewhite;
   border-radius: 20px;
-  width: 75vw;
+  width: 85vw;
   margin: 0 auto;
 }
 h2 {

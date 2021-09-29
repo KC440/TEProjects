@@ -34,6 +34,7 @@ CREATE TABLE flashcard_user (
 CREATE TABLE deck (
         deck_id serial,
         deck_name varchar(50),
+        description varchar(500),
         CONSTRAINT pk_deck PRIMARY KEY (deck_id)       
 );
 
@@ -55,7 +56,7 @@ CREATE TABLE flashcard_deck (
 
 // below script is error free.
 
-/*CREATE TABLE sessions(
+CREATE TABLE sessions(
         session_id serial,
         deck_id Integer,
         user_id Integer,
@@ -69,4 +70,4 @@ CREATE TABLE flashcard_deck (
         CONSTRAINT pk_session_id PRIMARY KEY (session_id),
         CONSTRAINT fk_deck_id FOREIGN KEY (deck_id) REFERENCES deck(deck_id),
         CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users(user_id)
-);*/
+);
